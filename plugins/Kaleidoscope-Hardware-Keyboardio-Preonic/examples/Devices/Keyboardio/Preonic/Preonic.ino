@@ -121,14 +121,15 @@ KEYMAPS(
     Key_Backtick,   Key_1,           Key_2,           Key_3,                   Key_4,           Key_5,           Key_6,           Key_7,           Key_8,                      Key_9,           Key_0,           Key_Minus,
     Key_Tab,        Key_Q,           Key_W,           Key_E,                   Key_R,           Key_T,           Key_Y,           Key_U,           Key_I,                      Key_O,           Key_P,           Key_Backspace,
     Key_Escape,     Key_A,           Key_S,           Key_D,                   Key_F,           Key_G,           Key_H,           Key_J,           Key_K,                      Key_L,           Key_Semicolon,   Key_Quote,
-    Key_LeftShift,  Key_Z,           Key_X,           Key_C,                   Key_V,           Key_B,           Key_N,           Key_M,           Key_Comma,                  Key_Period,      Key_Slash,       Key_Enter,
-    Key_Hyper,      Key_LeftControl, Key_LeftAlt,     Key_LeftGui,            ShiftToLayer(LOWER),       Key_Backspace,   Key_Space,       ShiftToLayer(RAISE),       Key_LeftArrow,             Key_DownArrow,   Key_UpArrow,     Key_RightArrow
+    Key_LeftShift,  Key_Z,           Key_X,           Key_C,                   Key_V,           Key_B,           Key_N,           Key_M,           Key_Comma,                  Key_Period,      Key_Slash,    Key_Enter,
+    ShiftToLayer(RAISE),      Key_LeftControl, LSHIFT(Key_9), LSHIFT(Key_0),            Key_Backspace,       Key_Backspace,   Key_Space,       Key_Hyper,       Key_LeftArrow,             Key_DownArrow,   Key_UpArrow,     Key_RightArrow
+    //Key_Hyper,      Key_LeftControl, Key_LeftAlt,     Key_LeftGui,            ShiftToLayer(LOWER),       Key_Backspace,   Key_Space,       ShiftToLayer(RAISE),       Key_LeftArrow,             Key_DownArrow,   Key_UpArrow,     Key_RightArrow
   ),
 
   [LOWER] = KEYMAP
   (
    ___, ___,  ___,            ___,             ___,
-    ___,            ___,             ___,             ___,             ___,             ___,             ___,             ___,             Key_Slash,      Key_Star,        Key_Minus,       Key_Equals,
+    ___,            ___,             ___,             ___,  ___,  ___,             ___,             ___,             Key_Slash,      Key_Star,        Key_Minus,       Key_Equals,
     ___,            ___,             ___,             ___,             ___,             ___,             ___,             Key_7,           Key_8,          Key_9,           Key_Minus,       ___,
     ___,            ___,             ___,             ___,             ___,             ___,             ___,             Key_4,           Key_5,          Key_6,           Key_Plus,        ___,
     ___,            ___,             ___,             ___,             ___,             ___,             ___,             Key_1,           Key_2,          Key_3,           Key_Plus,        ___,
@@ -137,22 +138,22 @@ KEYMAPS(
 
   [RAISE] = KEYMAP
   (
-      ___, ___,  ___,            ___,             ___,
-    Key_Escape,     Key_F1,          Key_F2,          Key_F3,                 Key_F4,          Key_F5,          Key_F6,          Key_F7,          Key_F8,                     Key_F9,          Key_F10,         Key_Backspace,
+      Key_mouseScrollDn, Key_mouseScrollUp, ___,            ___,             Consumer_Mute,
+    Key_Escape,     Key_F1,          Key_F2,          Key_F3,                 Key_F4,          Key_F5,          Key_F6,          Key_F7,          Key_F8,                     Key_F9,          Key_F10,         Key_Plus,
     Key_Backtick,   ___,             Key_mouseUp,     ___,                    Key_mouseWarpNW, Key_mouseWarpNE, Key_Backslash,   LSHIFT(Key_LeftBracket), LSHIFT(Key_RightBracket), Key_LeftBracket, Key_RightBracket, Key_Delete,
-    Key_CapsLock,   Key_mouseL,      Key_mouseDn,     Key_mouseR,             Key_mouseWarpSW, Key_mouseWarpSE, Key_LeftArrow,   Key_DownArrow,   Key_UpArrow,                Key_RightArrow,  ___,             ___,
+    Key_CapsLock,   Key_mouseL,      Key_mouseDn,     Key_mouseR,             Key_mouseWarpSW, Key_mouseWarpSE, Key_LeftArrow,   Key_DownArrow,   Key_UpArrow,                Key_RightArrow,  Key_Plus,             ___,
     ___,            Key_mouseBtnL,   Key_mouseBtnM,   Key_mouseBtnR,          ___,             Key_mouseWarpEnd,___,             ___,             ___,                        ___,             ___,             ___,
-    ___,            ___,             Key_RightAlt,    ___,                    ___,             ___,             ___,             ___,             ___,                        ___,             ___,             ___
+    ___,            ___,             Key_RightAlt,    ___,                    ___,             ___,             ___,             ___,             LSHIFT(Key_LeftBracket), LSHIFT(Key_RightBracket), Key_LeftBracket, Key_RightBracket
   ),
 
   [FUN] = KEYMAP
   (
        ___, ___, ___,            ___,             ___,
     Key_BLEOff, Key_BLESelectDevice1, Key_BLESelectDevice2, Key_BLESelectDevice3, Key_BLESelectDevice4, Key_BLEStartPairing, ___, ___, ___, ___, ___, M(MACRO_VERSION_INFO),
-    Key_LEDEffectNext,___,           Consumer_VolumeIncrement,___,            ___,             ___,             ___,             ___,             ___,                        ___,             ___,             ___,
+    Key_LEDEffectNext, LSHIFT(LALT(LCTRL(LGUI(Key_PageUp)))),           Consumer_VolumeIncrement,___,            ___,             ___,             ___,             ___,             ___,                        ___,             ___,             ___,
     ___,            Consumer_ScanPreviousTrack,Consumer_VolumeDecrement,Consumer_ScanNextTrack,___,             ___,             ___,             ___,             ___,                        ___,             ___,             ___,
-    Key_ToggleKeyclick,___,             Consumer_Mute,   ___,                    ___,             ___,             ___,             ___,             ___,                        ___,             ___,             ___,
-    M(MACRO_BATTERY_LEVEL), ___,        ___,             ___,                    ___,             ___,             ___,             ___,             ___,                        ___,             ___,              ___
+    Key_ToggleKeyclick,LSHIFT(LALT(LCTRL(LGUI(Key_PageDown)))),             Consumer_Mute,   ___,                    ___,             ___,             ___,             ___,             ___,                        ___,             ___,             ___,
+    M(MACRO_BATTERY_LEVEL), ___,        ___,             ___,                    ___,             ___,             ___,             ___,             Key_F17,                        Key_F12,             Key_F16,              Key_F19
   )
 );
 
@@ -526,6 +527,17 @@ const macro_t *macroAction(uint8_t macro_id, KeyEvent &event) {
 }
 
 void setup() {
+  QUKEYS(
+    kaleidoscope::plugin::Qukey(0, KeyAddr(4, 11), Key_RightShift),
+    kaleidoscope::plugin::Qukey(0, KeyAddr(2, 11), ShiftToLayer(LOWER)),
+    kaleidoscope::plugin::Qukey(0, KeyAddr(5, 2), Key_LeftAlt),
+    kaleidoscope::plugin::Qukey(0, KeyAddr(5, 3), Key_LeftGui),
+    kaleidoscope::plugin::Qukey(0, KeyAddr(5, 8), LSHIFT(LGUI(Key_LeftAlt))),
+    kaleidoscope::plugin::Qukey(0, KeyAddr(5, 9), LSHIFT(LGUI(Key_LeftControl)))
+    )
+  Qukeys.setHoldTimeout(200);
+  Qukeys.setOverlapThreshold(30);
+
   Kaleidoscope.setup();
   configureIndicators();
 
